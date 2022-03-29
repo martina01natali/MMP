@@ -1,0 +1,23 @@
+# Timeline codici/esempi MMP
+
+23/10	Example 4.11 Pred and preys
+12/11	Example 5.5, 5.6
+		Example 5.10 elastic string
+		example_save
+		finitediff
+		plot
+		graphics
+		tridiagonal
+		Documentation (PDFs): tridiagonal, solve banded
+17/11	Example 5.18 correct version
+18/11	Example 5.19
+		Example 5.20 -> see also second version (more flexible, more interesting bc)
+19/11	Example 6.1
+		Example 6.3
+26/11	Example 6.8
+		Example 6.9
+3/12	Example 7.3
+16/12	Example 7.7 animated
+		esempio onde triangolari
+		esempio animazione sin
+		Example 7.7 versione base

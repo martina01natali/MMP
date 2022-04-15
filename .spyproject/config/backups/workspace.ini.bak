@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['C:\\Users\\MARTINA\\.spyder-py3\\temp.py', 'Codes\\Reviewed\\RungeKuttaMethods_class.py', 'Codes\\Reviewed\\Simple_plot.py', 'Codes\\Reviewed\\Tridiagonal_matrix.py', 'Codes\\Reviewed\\Ex_4-11_Predators_Preys.py']
+recent_files = ['Codes\\Ex_5-5_5-6.py', 'Codes\\Ex_5-10_Elastic_string.py']
 
 [main]
 version = 0.2.0

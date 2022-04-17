@@ -53,11 +53,13 @@ def fun(i,x,h):
                         )
 vfun=np.vectorize(fun)
  
-# I build the x-grid with 10 intervals (9 points) between 0 and 1, so with
-# a step h = 0.1.
  
 t = np.linspace(0, 1, 101) # values for x, must be more than intervals chosen
 y=[]
+
+# I build the x-grid with 10 intervals (9 points) between 0 and 1, so with
+# a step h = 0.1.
+
 for i in range(1,n-1) :
     y=vfun(i,t,0.1)
     plt.plot(t,y)
@@ -88,15 +90,18 @@ print(kmatrix)
 # analytical.
 # The index i of the loop goes to 0 to n-2 (range(n-1) = 0,...,(n-1)-1) but I
 # want f to be expanded on the elements of the basis from index 1 to n-1.
-# I can do that by passing i+1 to the arguments of the integration. 
- 
+# I can do that by passing i+1 to the arguments of the integration.
+
 from scipy.integrate import quad
-def fun1(x,i,h):
-    return fun(i,x,h)*np.exp(x)
+
+
+def fun1(x, i, h):
+    return fun(i, x, h) * np.exp(x)
+
 
 f = np.ones(n-1)
 for i in range(n-1):
-    f[i]=quad(fun1,0,1,args=(i+1,h))[0]
+    f[i] = quad(fun1, 0, 1, args=(i+1, h))[0]
 print(f)
 
 #%%
@@ -118,7 +123,7 @@ print(coeff)
 def sol(x):
     sol=0
     for i in range(n-1):
-        sol += fun(i+1,x,h)*coeff[i]
+         sol += fun(i+1,x,h)*coeff[i]
     return sol
 
 def exact(x):

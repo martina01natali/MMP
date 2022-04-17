@@ -14,7 +14,9 @@ Created on Wed Nov 11 15:56:00 2020
 
 
 import numpy as np
+import scipy.linalg as linalg
 import matplotlib.pyplot as plt  
+from scipy.integrate import quad
 
 #definition of linear pieceweise function and its vectorization
 
@@ -27,11 +29,7 @@ def fun(x,i,h):
 
 vfun=np.vectorize(fun)
 
-
-#recall that in Python arrays and matrixes contain the element 0
-
 #definition of the integrand for the projection of f(x) on the elements of the basis
-from scipy.integrate import quad
 
 def fun1(x,i,h):
     return fun(x,i,h)*1
@@ -43,6 +41,7 @@ maindiag=np.empty(n-1)
 offdiag=np.empty(n-2)
 for i in range(n-1):
     maindiag[i]=2*((i+1)*h+1)/h
+
 #here I wrote the analytical solution of the integral that I am calculating
 #in the case I have no analytical solution fror the integral I should use
 #a numerical technique and insert the routine here  
@@ -50,12 +49,11 @@ for i in range(n-1):
 for i in range(n-2):
     offdiag[i]=-(h+2*(i+1)*h+2)/(2*h)
 
-#----------I HAVE TO BUILD A BANDED MATRIX HERE----------#
 kmatrix=np.diag(offdiag, -1) + np.diag(maindiag) + np.diag(offdiag, 1)
-
 
 print(kmatrix)
 
+# %%
 # definition of the vector f and its evaluation
 # note that in fun(x,i,h), fun1(x,i,h) i must run from 1 to n-1
 # and not from 0 to n-2. Therefore we need to shift the argument 
@@ -65,13 +63,20 @@ for i in range(n-1):
     
 print(f)
 
+# %%
 # solution of the linear system by a specific routine for solving banded matrixes
 # solve_banded is from scipy.linalg and must be imported
+# solve_banded accepts as arguments the number of non-null diagonals below and
 
-from scipy.linalg import solve_banded
-coeff = solve_banded((1,1),ab,f)
+
+k_inv = linalg.inv(kmatrix)
+print(k_inv)
+ab = k_inv.dot(f.T)
+print(ab)
+coeff = linalg.solve_banded((1,1),kmatrix,f)
 print(coeff)
 
+# %%
 # evaluation of the solution of the equation
 def sol(x):
     sol=0
@@ -89,4 +94,4 @@ s=vsol(t)
 ex=vexact(t)
 plt.plot(t,s) 
 plt.plot(t,ex)
-plt.show() 
+plt.show()

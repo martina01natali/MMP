@@ -2,8 +2,11 @@
 """
 Created on Thu Nov 12 09:35:42 2020
 
-@author: Drago
+@author: Drago, Martina
 """ 
+# TODO: make this methods a class whose object is a tridiagonal matrix
+# with different constructors by the different methods
+
 import numpy as np
  
 # These routines allows you to speed up the process of writing trigiagonal

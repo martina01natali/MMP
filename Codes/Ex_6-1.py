@@ -2,7 +2,7 @@
 
         #***************************************************#
 
-# Example 6.1
+# Example 6.1 - Homogeneous Dirichlet boundary conditions
 
 # We consider a 50 cm iron bar, with specific heat c = 0.437 J/(gK),
 # density \rho = 7.88 g/cm^3, and thermal conductivity k = 0.836 W/(cmK).

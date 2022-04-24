@@ -1,17 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Nov 25 10:56:15 2020
-
-@author: MARTINA
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Nov 11 15:56:00 2020
-
-@author: Drago
-"""
-
 
 import numpy as np
 import scipy.linalg as linalg
@@ -45,7 +32,6 @@ for i in range(n-1):
 #here I wrote the analytical solution of the integral that I am calculating
 #in the case I have no analytical solution fror the integral I should use
 #a numerical technique and insert the routine here  
-    
 for i in range(n-2):
     offdiag[i]=-(h+2*(i+1)*h+2)/(2*h)
 
@@ -67,8 +53,9 @@ print(f)
 # solution of the linear system by a specific routine for solving banded matrixes
 # solve_banded is from scipy.linalg and must be imported
 # solve_banded accepts as arguments the number of non-null diagonals below and
-
-
+# above the main diagonal, passed as a tuple (lower,upper), the banded form of
+# the matrix, and the right hand side function or coefficients, and solves the
+# linear algebra problem ax=b for x.
 k_inv = linalg.inv(kmatrix)
 print(k_inv)
 ab = k_inv.dot(f.T)

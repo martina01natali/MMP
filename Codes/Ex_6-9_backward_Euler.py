@@ -1,24 +1,24 @@
 # -*- coding: utf-8 -*-
-"""
-26/11/2020
-Heat equation solved by inverse Euler
-As usual, this example is taken from the Gochenback (?check)
-"""
 
-"""
-The direct Euler technique fails with STEEP DIFFERENTIAL EQUATIONS, because
-the solution explodes. The problem is to be found in the rapidly changing
-components. The solution is to use very small time steps (this makes the
-computational time longer). I should try to find a step not too small but
-not to large either.
-N.B. I have a condition on choosing h (step on x), that is \Delta(t) goes as h^2
-The HEAT EQUATION is STEEP indeed. You can see it by looking at the solution
-of the equation by the Fourier components: the coefficients are exponentials
-that go as n^2 (n=number of elements that we use for the base). E.g. if the
-initial situation is of a finite temperature != 0, I need a lot of components
-to describe the first phases, but the components then vanish very rapidly.
-Here, I should use inverse Euler.
-"""
+         #***************************************************#
+
+# Example 6.9 - Method of lines for the heat equation with homogeneous
+# Dirichlet boundary conditions and using the backward Euler method.
+
+# The direct Euler technique fails with STEEP DIFFERENTIAL EQUATIONS, because
+# the solution explodes. The problem is to be found in the rapidly changing
+# components. The trick is to use very small time steps (this makes the
+# computational time longer). I should try to find a step not too small but
+# not to large either.
+# N.B. I have a condition on choosing h (step on x), that is \Delta(t) goes as h^2
+# The HEAT EQUATION is STEEP indeed. You can see it by looking at the solution
+# of the equation by the Fourier components: the coefficients are exponentials
+# that go as n^2 (n=number of elements that we use for the base). E.g. if the
+# initial situation is of a finite temperature != 0, I need a lot of components
+# to describe the first phases, but the components then vanish very rapidly.
+# Here, I should use inverse Euler.
+
+         #***************************************************#
 
 import numpy as np
 import matplotlib.pyplot as plt  
@@ -34,8 +34,6 @@ tfin=180
 ntstep=90 
 dt=(tfin-t0)/ntstep
 
-
-# matrixes m and k have indexes ranging from 0 to n-2, spanning n-1 values
 
 maindiagm=np.empty(n-1)
 offdiagm=np.empty(n-2)

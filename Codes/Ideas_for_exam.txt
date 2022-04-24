@@ -1,3 +1,0 @@
-Exam's ideas
-
-- general case of finite elements technique with matrix elements evaluated (integral) by numerical methods (modify ex. 5.18)

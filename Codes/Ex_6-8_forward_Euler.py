@@ -195,8 +195,8 @@ dt = (tfin-t0)/ntstep
 al = np.zeros(n-1)
 
 for t in range(ntstep+1):
-    coeff = solve_banded((1, 1), mb, -np.dot(k, al)+fvalues(t*dt))
     # if t0 != 0 you should put (t0+t)*dt
+    coeff = solve_banded((1, 1), mb, -np.dot(k, al)+fvalues(t*dt))
     al += dt*coeff
 
 # --------------------------------------------

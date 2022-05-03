@@ -36,6 +36,7 @@ def calc_cd(f, x, h):
 # absolute value of the difference between the central derivative and the
 # exact value.
 
+# %%
 
 if __name__ == '__main__':
     x = 0.5
@@ -51,3 +52,4 @@ if __name__ == '__main__':
     print("h     abs. error in fd   abs. error in cd")
     for h, fd, cd in zip(hs, fds, cds):
         print(rowf.format(h, fd, cd))
+        

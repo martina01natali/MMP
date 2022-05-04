@@ -61,6 +61,7 @@ psi_np = lambdify(x, psi_sym, "numpy")
 print(psi_np(2))
 psi_np = lambdify(x, psi_sym, "scipy")
 print(psi_np(2))
+
         #***************************************************#        
 # %%
 

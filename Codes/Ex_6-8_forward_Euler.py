@@ -121,6 +121,7 @@ vrhs = np.vectorize(rhs)
 
 grid = np.linspace(0, 100, 101)
 gridrhs = vrhs(grid, 1)
+plt.figure(1)
 plt.plot(grid, gridrhs)
 plt.title("Plot of f(x,t) VS x at time t = 1 s")
 plt.show()
@@ -221,5 +222,6 @@ def sol(x):
 vsol = np.vectorize(sol)
 s = vsol(grid)
 
+plt.figure(2)
 plt.plot(grid, s)
 plt.show()

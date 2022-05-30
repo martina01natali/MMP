@@ -15,14 +15,12 @@ the resulting linear algebra problem Ku=f.
 
 ## ToDos
 - [x] implement lambda functions where possible
-- [ ] implement string input of ode and/or rhs only
 - [x] implement explanation of passages with analytical form of matrixes
 - [ ] 
 - [ ] 
 - [ ] 
 
 ## Issues
-- [ ] fn is wrong and I dunno whatta do
 - [ ] 
 - [ ] 
 - [ ] 
